@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>demo-site · 静态演示页</title>
+<style>
+  :root {
+    --bg: #f7f8fa;
+    --panel: #ffffff;
+    --text: #1a1d21;
+    --muted: #5f6672;
+    --line: #e4e7ec;
+    --accent: #1f6feb;
+    --radius: 14px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14171b;
+      --panel: #1b1f24;
+      --text: #eef1f5;
+      --muted: #9aa3af;
+      --line: #2b3138;
+      --accent: #6ea8fe;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.65 -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 72px 24px; }
+  header { margin-bottom: 56px; }
+  .tag {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 4px 12px;
+    margin-bottom: 20px;
+  }
+  h1 { font-size: 40px; line-height: 1.2; margin: 0 0 14px; letter-spacing: -.02em; }
+  .lead { color: var(--muted); font-size: 17px; margin: 0; max-width: 60ch; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 16px;
+    margin: 40px 0;
+  }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px;
+  }
+  .card h3 { margin: 0 0 8px; font-size: 16px; }
+  .card p { margin: 0; color: var(--muted); font-size: 14px; }
+  .card .num { font-size: 12px; color: var(--muted); display: block; margin-bottom: 10px; }
+  footer {
+    border-top: 1px solid var(--line);
+    padding-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="tag">static demo</span>
+      <h1>demo-site</h1>
+      <p class="lead">一个单文件静态页面，用于验证仓库创建与文件推送链路。所有样式内联，无外部依赖，克隆后双击 index.html 即可打开。</p>
+    </header>
+
+    <main class="grid">
+      <section class="card">
+        <span class="num">01</span>
+        <h3>零依赖</h3>
+        <p>不加载任何 CDN、字体或脚本，离线可用。</p>
+      </section>
+      <section class="card">
+        <span class="num">02</span>
+        <h3>自适应</h3>
+        <p>栅格按容器宽度自动换行，窄屏单列显示。</p>
+      </section>
+      <section class="card">
+        <span class="num">03</span>
+        <h3>跟随主题</h3>
+        <p>通过 prefers-color-scheme 响应系统深色模式。</p>
+      </section>
+    </main>
+
+    <footer>
+      <span>源码托管于 GitHub Pages 可直接发布。</span>
+      <span><a href="https://github.com/elvinlee333/demo-site">查看仓库</a></span>
+    </footer>
+  </div>
+</body>
+</html>
